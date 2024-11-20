@@ -8,7 +8,7 @@ on:
 jobs:
   push_to_registries:
     # Nom du workflow : ce nom sera affiché dans l'interface GitHub Actions.
-    name: Build and Push Docker Image
+    name: Build, Scan and Push Docker Image
     # Spécifie l'environnement d'exécution : ici, une machine virtuelle Ubuntu.
     runs-on: ubuntu-latest
 
@@ -49,3 +49,9 @@ jobs:
           tags: ghcr.io/sim0nr/ue19-lab-05
           # Spécifie le nom et le tag de l'image Docker :
           # - ghcr.io/sim0nr/ue19-lab-05 : chemin vers le registre.
+
+      # Étape 5 : Vérification de l'image Docker pour les vulnérabilités
+      - name: Analyze Docker image with Trivy
+        uses: aquasecurity/trivy-action@master # Utilise l'outil Trivy pour détecter les failles de sécurité
+        with:
+          image-ref: ghcr.io/sim0nr/ue19-lab-05 # Référence de l'image Docker à scanner
