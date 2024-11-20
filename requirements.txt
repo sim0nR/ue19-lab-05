@@ -1,0 +1,4 @@
+# Cette ligne spécifie que le projet nécessite la bibliothèque `requests` en version exacte 2.32.3.
+# Cette bibliothèque est utilisée pour effectuer des requêtes HTTP.
+# La version exacte garantit la compatibilité avec le code.
+requests==2.32.3
