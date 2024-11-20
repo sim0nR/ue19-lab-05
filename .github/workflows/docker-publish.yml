@@ -40,7 +40,7 @@ jobs:
           # - registry : spécifie l'adresse du registre Docker (ici, GitHub Container Registry).
           # - username : utilise l'identifiant de l'utilisateur qui déclenche l'action.
 
-            # Étape 4 : Construire l'image Docker et la pousser dans le registre.
+      # Étape 4 : Construire l'image Docker et la pousser dans le registre.
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
