@@ -32,7 +32,7 @@ jobs:
 
       # Étape 3 : Connexion au registre Docker GitHub Container Registry (ghcr.io).
       - name: Log in to GitHub Docker Registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
